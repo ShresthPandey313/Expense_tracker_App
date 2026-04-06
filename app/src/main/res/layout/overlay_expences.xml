@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="#80000000"
+    android:backgroundTint="@android:color/transparent"
+    android:layout_height="match_parent"
+    android:clickable="false"
+    android:focusable="false"
+    >
+
+    <!-- ================= CARD VIEW ================= -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        android:clickable="true"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- ================= TOP PURPLE SECTION ================= -->
+
+            <!-- ================= BOTTOM SECTION ================= -->
+            <LinearLayout
+                android:id="@+id/topSection"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background"
+                android:orientation="vertical"
+                android:padding="20dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- Success Icon -->
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/check" />
+
+                <!-- Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="6dp"
+                    android:text="Payment Successful!"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Amount -->
+                <TextView
+                    android:id="@+id/amountTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:text="₹500.00"
+                    android:textColor="@android:color/white"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+                <!-- Merchant -->
+                <TextView
+                    android:id="@+id/merchantTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="2dp"
+                    android:text="paid to Amazon India"
+                    android:textColor="#DDFFFFFF"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/topSection">
+
+                <!-- EditText -->
+                <EditText
+                    android:id="@+id/detailEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_edittext"
+                    android:hint="Add purpose (e.g., groceries)"
+                    android:padding="12dp" />
+
+                <!-- Buttons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/canclebutton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_button_outline"
+                        android:text="Cancel" />
+
+                    <Space
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content" />
+
+                    <Button
+                        android:id="@+id/continueButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_button_filled"
+                        android:text="Save"
+                        android:textColor="@android:color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <!-- ================= TOP FLOATING LOGO ================= -->
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/cropped_phonepe_logo"
+        android:background="@drawable/bg_circle_white"
+        android:padding="6dp"
+        android:elevation="11dp"
+
+        app:layout_constraintTop_toTopOf="@id/card"
+        app:layout_constraintBottom_toTopOf="@id/card"
+        app:layout_constraintStart_toStartOf="@id/card"
+        app:layout_constraintEnd_toEndOf="@id/card"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
