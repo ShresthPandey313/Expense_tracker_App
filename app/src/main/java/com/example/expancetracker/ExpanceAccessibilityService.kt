@@ -39,7 +39,7 @@ class ExpanceAccessibilityService: AccessibilityService(){
 
 
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
-        if (event?.eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED){
+        if (event?.eventType == AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED){
             val rootNode = rootInActiveWindow ?: return // extract the ui element of the app on mobile
             val screenText = getAllText(rootNode)  // function in the onInterrupt method
             paymentDetected(screenText)
@@ -48,7 +48,7 @@ class ExpanceAccessibilityService: AccessibilityService(){
 
     override fun onInterrupt() {
     }
-//--------------------------------- getAllText()--------------------------------------------------//
+    //--------------------------------- getAllText()--------------------------------------------------//
     private fun getAllText(node: AccessibilityNodeInfo?): String{
         if( node == null) return ""
         var text = ""
@@ -127,7 +127,7 @@ class ExpanceAccessibilityService: AccessibilityService(){
             parentJob?.cancel()
             parentJob = serviceScope.launch {
 
-                delay(400)
+                delay(800)
                 if(!isActive) return@launch
                 try {
                     val rootNode = rootInActiveWindow ?: return@launch
